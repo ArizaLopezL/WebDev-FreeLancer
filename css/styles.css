@@ -1,0 +1,31 @@
+:root{/*Custom properties*/
+    /*Paleta de colores*/
+    --blanco:#ffffff;
+    --oscuro:#212121;
+    --primario:#FFC107;
+    --secundario:#0097A7;
+    --gris:#757575;
+
+    --fuentePrincipal:3,8rem;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    font-size: 16px;
+    font-family: 'Krub', sans-serif;
+}
+/*Las lineas de arriba hacen que sea mas facil trabajar con rems*/
+/*1 rem=10px pero se adaptan mucho mejor que los pixeles*/
+.titulo {/*Tb vale h1, pero .titulo es un selector de clase
+  /*Propiedades de los h1 relacionados con esta hoja de estilos*/
+  text-align: center;
+  font-size: var(--fuentePrincipal);
+  font-weight: 400;
+}
+.titulo span{/*span{...}Aplica span a todos los span*/
+/*h1 span aplica a los span dentro de los h1*/
+    font-size: 2rem;
+}
+/*El ultimo en escribir no es el último que se va a aplicar, la prioridad 
+va según su especificidad, la flag !important establece el mayor grado de especificidad*/
