@@ -1,31 +1,56 @@
-:root{/*Custom properties*/
-    /*Paleta de colores*/
-    --blanco:#ffffff;
-    --oscuro:#212121;
-    --primario:#FFC107;
-    --secundario:#0097A7;
-    --gris:#757575;
+:root {
+  /*Custom properties*/
+  /*Paleta de colores*/
+  --blanco: #ffffff;
+  --oscuro: #212121;
+  --primario: #ffc107;
+  --secundario: #0097a7;
+  --gris: #757575;
 
-    --fuentePrincipal:3,8rem;
+  --fuentePrincipal: 3.8rem;
 }
-html{
-    font-size: 62.5%;
+html {
+  font-size: 62.5%;
 }
-body{
-    font-size: 16px;
-    font-family: 'Krub', sans-serif;
+body {
+  font-size: 16px;
+  font-family: "Krub", sans-serif;
 }
 /*Las lineas de arriba hacen que sea mas facil trabajar con rems*/
 /*1 rem=10px pero se adaptan mucho mejor que los pixeles*/
-.titulo {/*Tb vale h1, pero .titulo es un selector de clase
+.titulo {
+  /*Tb vale h1, pero .titulo es un selector de clase
   /*Propiedades de los h1 relacionados con esta hoja de estilos*/
   text-align: center;
   font-size: var(--fuentePrincipal);
-  font-weight: 400;
+  font-size: 3.8rem;
 }
-.titulo span{/*span{...}Aplica span a todos los span*/
-/*h1 span aplica a los span dentro de los h1*/
-    font-size: 2rem;
+.titulo span {
+  /*span{...}Aplica span a todos los span*/
+  /*h1 span aplica a los span dentro de los h1*/
+  font-size: 2rem;
 }
 /*El ultimo en escribir no es el último que se va a aplicar, la prioridad 
 va según su especificidad, la flag !important establece el mayor grado de especificidad*/
+.contenedor {
+  /*Para centrar contenidos*/
+  width: 120rem;
+  margin-top: 0; /*No quiero separacion respecto a lo de arriba*/
+  margin-bottom: 0;
+  margin-right: auto;
+  margin-left: auto; /*Del lado derecho e izquierdo q se alinee automaticamente,como
+    los dos estan así quiero que se centren*/
+  /*lo de arriba es lo mismo que:(top,right,bottom,left, como un reloj)*/
+  margin: 0, auto, 0, auto;
+}
+
+.navegacion-principal {
+  background-color: var(--secundario);
+}
+.nav-bg {
+  background-color: var(--secundario);
+}
+.navegacion-principal a{
+    background-color: var(--primario);
+}
+/*Dos tipos de display por default : inline(izquierda a derecha) o block(arriba a abajo)*/
