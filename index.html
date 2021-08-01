@@ -181,38 +181,43 @@
           </p>
         </section>
       </div>
-    </main>
+    
 
-    <footer>
       <h2>Contacto</h2>
       <!Formulario>
-      <form>
+      <form class="formulario">
         <fieldset>
           <!El div me lo coloca de arriba a abajo>
           <legend>Contáctanos llenando todos los campos</legend>
-          <div>
-            <label>Nombre</label>
-            <input type="text" placeholder="Tu Nombre" />
-          </div>
-
-          <div>
-            <label>Teléfono</label>
-            <input type="text" placeholder="Tu Teléfono" />
-          </div>
-          <div>
-            <label>Correo</label>
-            <input type="text " placeholder="Tu Email" />
-          </div>
-          <div>
-            <label>Mensaje</label>
-            <textarea></textarea>
-          </div>
-          <div>
-            <input type="submit" value="Enviar" />
-          </div>
+          <div class="contenedor-campos">
+            <div class="campo">
+              <label>Nombre</label>
+              <input type="text" class="input-text" placeholder="Tu Nombre" />
+            </div>
+  
+            <div class="campo">
+              <label>Teléfono</label>
+              <input type="tel" class="input-text" placeholder="Tu Teléfono" />
+            </div>
+            <div class="campo correo">
+              <label>Correo</label>
+              <input type="email " class="input-text" placeholder="Tu Email" />
+            </div>
+            <div class="campo">
+              <label>Mensaje</label>
+              <textarea class="input-text"></textarea>
+            </div>
+          </div> <!--.contenedor-campos-->
+            <div class="alinear-derecha flex"> 
+              <input class="boton w-sm-100" type="submit" value="Enviar" />
+            </div>
+          
         </fieldset>
       </form>
-      <p>Todos los derechos reservados.Luis Ariza López Freelancer</p>
-    </footer>
+    </main>
+    <footer class="footer"><p>Todos los derechos reservados.Luis Ariza López Freelancer</p></footer>
+      
+    
   </body>
+
 </html>
