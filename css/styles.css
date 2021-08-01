@@ -1,0 +1,312 @@
+:root {
+  /*Custom properties*/
+  /*Paleta de colores*/
+  --blanco: #ffffff;
+  --oscuro: #212121;
+  --primario: #ffc107;
+  --secundario: #0097a7;
+  --gris: #757575;
+  --grisClaro: #dfe9f3;
+
+  --fuentePrincipal: 3.8rem;
+}
+html {
+  font-size: 62.5%;
+  box-sizing: border-box; /*Css box model*/
+  scroll-snap-type: y mandatory;/*Tipo scroll*/
+}
+/*Scroll snap por secciones*/
+.servicios,.navegacion-principal,.formulario{
+  scroll-snap-stop: always;
+scroll-snap-align: center;
+}
+/*Box model Paul Irish*/
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+/*Defino reglas para la tipografía*/
+h1 {
+  font-size: 3.8rem;
+}
+h2 {
+  font-size: 2.8rem;
+}
+h3 {
+  font-size: 1.8rem;
+}
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+body {
+  font-size: 16px;
+  font-family: "Krub", sans-serif;
+  background-image: linear-gradient(
+    to top,
+    var(--grisClaro) 0%,
+    var(--blanco) 100%
+  ); /*Degradado*/
+}
+/*Las lineas de arriba hacen que sea mas facil trabajar con rems*/
+/*1 rem=10px pero se adaptan mucho mejor que los pixeles*/
+.titulo {
+  /*Tb vale h1, pero .titulo es un selector de clase
+  /*Propiedades de los h1 relacionados con esta hoja de estilos*/
+  text-align: center;
+  font-size: var(--fuentePrincipal);
+  font-size: 3.8rem;
+}
+.titulo span {
+  /*span{...}Aplica span a todos los span*/
+  /*h1 span aplica a los span dentro de los h1*/
+  font-size: 2rem;
+}
+
+/*El ultimo en escribir no es el último que se va a aplicar, la prioridad 
+va según su especificidad, la flag !important establece el mayor grado de especificidad*/
+.contenedor {
+  /*Para centrar contenidos*/
+  max-width: 120rem;
+  margin-top: 0; /*No quiero separacion respecto a lo de arriba*/
+  margin-bottom: 0;
+  margin-right: auto;
+  margin-left: auto; /*Del lado derecho e izquierdo q se alinee automaticamente,como
+    los dos estan así quiero que se centren*/
+  /*lo de arriba es lo mismo que:(top,right,bottom,left, como un reloj)*/
+  margin: 0, auto, 0, auto;
+}
+
+.boton {
+  background-color: var(--secundario);
+  color: var(--blanco);
+  padding: 1rem 3rem; /*Equivalente a padding:1 rem 3 rem 1 rem 3 rem*/
+  margin-top: 3rem;
+  font-size: 2rem;
+  text-decoration: none;
+  text-transform: uppercase; /*A mayuscula*/
+  font-weight: bold;
+  border-radius: 0.5rem; /*Redondear esquinas*/
+  width: 90%;
+  text-align: center;
+  border: none;
+}
+@media (min-width: 768px) {
+  .boton {
+    width: auto; /*Q se resetee*/
+  }
+}
+/*Utilidades*/
+.w-sm-100 {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .w-sm-100 {
+    width: auto;
+  }
+}
+.flex {
+  display: flex;
+}
+.alinear-derecha {
+  justify-content: flex-end;
+}
+.boton:hover {
+  cursor: pointer; /*Aparece mano al pasar el boton*/
+}
+.sombra {
+  -webkit-box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 0.54);
+  -moz-box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 0.54);
+  box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 0.54);
+  background-color: var(--blanco);
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.navegacion-principal {
+  background-color: var(--secundario);
+
+  display: flex; /*Flexbox*/
+  /*flex-direction: row;*/
+  flex-direction: column;
+  /*Como se va a organizar el contenido en navegación principal(en row)
+  en column es align items*/
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .navegacion-principal {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+/*Flexbox es un modelo unidimensional para crear layouts, hay dos ejes
+fila y columna, row va por default, los otros valores son row-reverse,column, column-reverse
+Con row o row-reverse los elementos hijos se colocaran de iz a dcha y si se pone column
+o column reverse se va de arriba a abajo, es especialmente diseñado para alinear 
+elementos en tus diseños*/
+.nav-bg {
+  background-color: var(--secundario);
+}
+
+/*Dos tipos de display por default : inline(izquierda a derecha) o block(arriba a abajo)*/
+/*Margin: define la distancia respecto otros elementos*/
+/*Padding:"engorda" el elemento, el margin lo hace desde fuera y el padding desde dentro*/
+.navegacion-principal a {
+  display: block;
+  text-align: center;
+  color: var(--blanco);
+  text-decoration: none; /*Es el subrayado*/
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 1rem; /*Esto es equivalente a Padding:1rem,1rem,1rem,1rem*/
+}
+.navegacion-principal a:hover {
+  /*Para cuando paso el raton por encima*/
+  background-color: var(--primario);
+  color: var(--oscuro);
+}
+
+/*Responsive Web Design -> Es un enfoque que nos dice que nustros diseños deberán adaptarse a las 
+interacciones del usuario y la resolución que utilizan, por tanto los sitios deberan adaptarse
+a diferentes dispositivos, esto lo hacemos mediante media queries @media(min-widht:768px){} que son condiciones*/
+/*En parentesis va la condicion para que se ejecute el codigo*/
+/*No hace falta reescribir propiedades solo escribiremos las propiedades que queremos que cambien*/
+/*@media ( min-width: 480px ){
+  body {
+    background-color: blue;
+  }
+}*/
+.hero {
+  /*Con .. sales de la carpeta actual*/
+  background-image: url(../img/hero.jpg);
+  background-repeat: no-repeat; /*Evitar q se repita si no cubre*/
+  background-size: cover;
+  height: 450px;
+  position: relative; /*Posición relativa al padre*/
+  margin-bottom: 2rem;
+}
+/*Css box model -> el tamaño de lo que se muestra en pantalla viene delimitado por 4 cosas: tamaño de contenido, tamaño de relleno(padding), tamaño de borde y margen*/
+.contenido-hero {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7); /*Sintaxis Anterior*/
+  background-color: rgb(0 0 0 / 70%);
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center; /*Justificas horizontalmente*/
+  justify-content: center; /*Justificas verticalmente*/
+}
+.contenido-hero h2,
+.contenido-hero p {
+  /*Pongo , gracias a box sizing*/
+  color: var(--blanco);
+}
+.ubicacion {
+  display: flex;
+  align-items: flex-end;
+}
+
+
+
+/**Servicios**/
+@media (min-width: 768px) {
+  .servicios {
+    display: grid; /*Css grid : definir ubicacion y el tamaño de los elementos de tu sitio web como una tabla html pero mas flexible y con mas 
+    flexibilidad y control sobre el diseño, en flexbox habia 1 sola dimension row o column pero en grid tienes acceso a las dos dimensiones*/
+    /*grid-template-columns: 300px 300px;
+    grid-template-rows: 200px 800px;
+    /*Version mas corta row primero column despues
+  
+    grid:200px 800px / 300px 300px;*/
+    grid-template-columns: 33.3% 33.3% 33.3%; /*tambien vale 1fr 1fr 1 fr o repeat(3, 1fr)*/
+    column-gap: 1rem;
+  }
+}
+/*¿Cuando se usa Flexbox,Grid o floats*/
+/*Flexbox:alineación o distribución de elementos que estaran dentro de contendores
+  CssGrid:layout de tu sitio web como columnas o contenedores de elementos
+  Floats: nunca */
+.servicio {
+  /*Sin mediaquery*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.servicio h3 {
+  color: var(--secundario);
+  font-weight: normal;
+}
+.servicio p {
+  line-height: 2;
+  text-align: center;
+}
+.servicio .iconos {
+  height: 15rem;
+  width: 15rem;
+  background-color: var(--primario);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*Formulario*/
+.formulario {
+  background-color: var(--gris);
+  width: min(
+    60rem,
+    100%
+  ); /**Utilizar el valor más pequeño entre 60rem o el 100%*/
+  margin: 0 auto; /*Para centrar lo usamos cuando el padre no es display flex*/
+  padding: 2rem;
+  border-radius: 1rem;
+}
+.formulario fieldset {
+  border: none;
+}
+.formulario legend {
+  text-align: center;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--primario);
+}
+@media (min-width: 768px) {
+  .contenedor-campos {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: auto auto 20rem;
+    column-gap: 1rem;
+  }
+  .campo:nth-child(3),.campo:nth-child(4){/*Selecciona el tercer hijo de los campos asi evitas crear una clase extra*/
+    grid-column: 1/3;/*Ocupa las columnas de la 1 a la 3*/
+  }
+}
+
+.campo {
+  margin-bottom: 1rem;
+}
+.campo label {
+  color: var(--blanco);
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.input-text {
+  width: 100%;
+  border: none;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+.campo textarea{
+  height: 20rem;
+}
+/*Footer*/
+.footer{
+  text-align: center;
+}
